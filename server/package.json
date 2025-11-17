@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "node.js": "^0.0.1-security",
+    "react": "^19.2.0"
+  },
+  "name": "node.jsreactexpress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adrian1998-java/Node.js-React-Express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Adrian1998-java/Node.js-React-Express/issues"
+  },
+  "homepage": "https://github.com/Adrian1998-java/Node.js-React-Express#readme"
+}
