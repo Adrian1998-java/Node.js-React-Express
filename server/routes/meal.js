@@ -26,4 +26,21 @@ router.get("/random", async (req, res) => {
   }
 });
 
+router.get("/image/:name", (req, res) => {
+  const ingredient = req.params.name;
+
+  // Normalizar la primera letra (Tea, Chicken, Lime...)
+  const formatted = ingredient
+    .trim()
+    .replace(/\s+/g, " ")
+    .replace(/^\w/, (c) => c.toUpperCase());
+
+  const imageUrl = `https://www.themealdb.com/images/ingredients/${formatted}-Small.png`;
+
+  res.json({
+    ingredient,
+    image: imageUrl,
+  });
+});
+
 module.exports = router
