@@ -7,6 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api", require("./routes/saludo"))
+app.use("/api/meal", require("./routes/meal"))
 
 app.get('/', (req, res) => {
   res.send('Hello World!')

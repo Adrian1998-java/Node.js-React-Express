@@ -96,3 +96,28 @@ footer {
   text-align: center;
   color: #777;
 }
+
+.meal-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* ==== MEAL ==== */
+.instructions {
+  margin-top: 20px;
+}
+
+.ingredients ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.ingredients li {
+  padding: 6px 0;
+}
+
+.video-player {
+  margin-top: 30px;
+}
+

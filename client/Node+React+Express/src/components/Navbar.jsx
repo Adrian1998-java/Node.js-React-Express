@@ -9,6 +9,7 @@ function Navbar() {
         <li><Link to="/">Inicio</Link></li>
         <li><Link to="/about">Acerca</Link></li>
         <li><Link to="/dashboard">Dashboard</Link></li>
+        <li><Link to="/ramdommeal">Ramdom Meal</Link></li>
       </ul>
     </nav>
   );
