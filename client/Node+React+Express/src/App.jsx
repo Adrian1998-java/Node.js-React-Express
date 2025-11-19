@@ -1,34 +1,26 @@
-import { useEffect, useState } from "react";
+// src/App.jsx
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Dashboard from "./pages/Dashboard";
+import NotFound from "./pages/NotFound";
+import "./App.css";
+
 
 function App() {
-  const [mensaje, setMensaje] = useState("");
-  const [respuesta, setRespuesta] = useState("");
-
-  useEffect(() => {
-    fetch("http://localhost:3001/api/saludo")
-      .then(res => res.json())
-      .then(data => setMensaje(data.mensaje));
-  }, []);
-
-  const enviarDatos = async () => {
-    const res = await fetch("http://localhost:3001/api/enviar", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ nombre: "Carlos" })
-    });
-
-    const data = await res.json();
-    setRespuesta(data.respuesta);
-  };
-
   return (
-    <div style={{ fontFamily: "sans-serif", padding: "20px" }}>
-      <h1>{mensaje}</h1>
-
-      <button onClick={enviarDatos}>Enviar datos al backend</button>
-
-      {respuesta && <p>{respuesta}</p>}
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        {/* Ruta 404 */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
