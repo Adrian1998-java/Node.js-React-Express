@@ -10,7 +10,7 @@ function IngredientsList({ list }) {
       const imgs = {};
 
       for (const item of list) {
-        const res = await fetch(`http://localhost:3000/api/meal/image/${item.ingredient}-small`);
+        const res = await fetch(`http://localhost:3000/api/meal/image/${item.ingredient}`);
         const data = await res.json();
         imgs[item.ingredient] = data.image;
       }
@@ -31,11 +31,10 @@ function IngredientsList({ list }) {
             {/* Imagen del ingrediente */}
             {images[item.ingredient] && (
               <img 
-                src={images[item.ingredient]} 
+                src={`https://www.themealdb.com/images/ingredients/${item.ingredient}-Small.png`} 
                 alt={item.ingredient} 
                 width="50"
-                style={{ borderRadius: "6px" }}
-              />
+                />
             )}
 
             {/* Nombre y medida */}

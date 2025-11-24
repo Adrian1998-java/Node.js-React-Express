@@ -6,8 +6,9 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
-import "./App.css";
 import Meal from "./pages/Meal";
+import "./App.css";
+import "./styles/Meal.css";
 
 
 function App() {

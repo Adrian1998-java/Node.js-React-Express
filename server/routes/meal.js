@@ -29,7 +29,9 @@ router.get("/random", async (req, res) => {
 router.get("/image/:name", (req, res) => {
   const ingredient = req.params.name;
 
-  // Normalizar la primera letra (Tea, Chicken, Lime...)
+  if (!ingredient) return res.status(400).json({ error: "Nombre de ingrediente vacío" });
+
+  // Solo recortar y capitalizar primera letra
   const formatted = ingredient
     .trim()
     .replace(/\s+/g, " ")
@@ -42,5 +44,7 @@ router.get("/image/:name", (req, res) => {
     image: imageUrl,
   });
 });
+
+
 
 module.exports = router
